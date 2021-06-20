@@ -1,0 +1,43 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function req(){
+        const request = new XMLHttpRequest();
+        request.open("GET", "/api");
+        request.setRequestHeader("Content-type", "application/json; charset=utf-8");
+        request.addEventListener("readystatechange", function() {
+            if (request.readyState === 4 && request.status == 200) {
+                let data = JSON.parse(request.responseText);
+
+                for (var i in data) {
+                    console.log(data[i].name)
+                    let newDiv = document.createElement("div")
+                    newDiv.innerHTML = ` <h5> ${data[i].name}: <br> ${data[i].message} </h5> `
+                    my_div = document.getElementById("len");
+                    document.body.insertBefore(newDiv, my_div);
+                }
+              
+            } else {
+                console.error('Что-то пошло не так');
+            }
+        });
+        request.send(); 
+    }
+
+    req();  
+</script>
+    <div id='len'></div>
+    <!-- <script src="{{ url_for( 'static', filename='script.js')}}"></script> -->
+
+    <form method="POST" action="/api">
+        <input type="text" name="sms">
+    </form>
+</body>
+</html> -->
